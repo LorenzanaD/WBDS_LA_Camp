@@ -1,0 +1,92 @@
+
+(base) Dafnes-MacBook-Air:proyecto_final_pre-camp_wbds_la-LorenzanaD dafne$ cd paso_2
+(base) Dafnes-MacBook-Air:paso_2 dafne$ ls
+instrucciones.txt
+(base) Dafnes-MacBook-Air:paso_2 dafne$ cat instrucciones.txt
+
+
+¡Esta fue fácil!
+
+INSTRUCCIÓN: Ahora andá al directorio paso_5 y seguí las instrucciones.
+¡Pero cuidado! Ese archivo es muy grande, así que leé sólo las primeras dos líneas
+(base) Dafnes-MacBook-Air:paso_2 dafne$ cd ..
+(base) Dafnes-MacBook-Air:paso_5 dafne$ ls
+instrucciones.txt
+(base) Dafnes-MacBook-Air:paso_5 dafne$ head -2 instrucciones.txt
+¡Hagamos las cosas más interesantes!
+INSTRUCCIÓN: Ahora andá al directorio paso_10 y seguí las instrucciones
+(base) Dafnes-MacBook-Air:paso_5 dafne$ cd ..
+(base) Dafnes-MacBook-Air:proyecto_final_pre-camp_wbds_la-LorenzanaD dafne$ cd paso_10
+(base) Dafnes-MacBook-Air:paso_10 dafne$ ls
+instrucciones.txt
+(base) Dafnes-MacBook-Air:paso_10 dafne$ cat instrucciones.txt
+¡Hora de usar la web!
+
+INSTRUCCIÓN: Descargá la licencia GPLv3 de https://www.gnu.org/licenses/gpl-3.0.txt
+Contá cuantas veces aparece la palabra freedom. Con ese número, andá al paso correspondiente y seguí las instrucciones.
+
+(base) Dafnes-MacBook-Air:paso_10 dafne$ open instrucciones.txt
+(base) Dafnes-MacBook-Air:paso_10 dafne$ wget https://www.gnu.org/licenses/gpl-3.0.txt
+--2022-11-19 13:28:45--  https://www.gnu.org/licenses/gpl-3.0.txt
+Resolving www.gnu.org (www.gnu.org)... 2001:470:142:5::116, 209.51.188.116
+Connecting to www.gnu.org (www.gnu.org)|2001:470:142:5::116|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 35149 (34K) [text/plain]
+Saving to: 'gpl-3.0.txt'
+
+gpl-3.0.txt                                    100%[===================================================================================================>]  34.33K  26.1KB/s    in 1.3s    
+
+2022-11-19 13:28:47 (26.1 KB/s) - 'gpl-3.0.txt' saved [35149/35149]
+
+
+(base) Dafnes-MacBook-Air:paso_10 dafne$ grep -wc "freedom" gpl-3.0.txt
+7
+(base) Dafnes-MacBook-Air:paso_10 dafne$ cd ..
+(base) Dafnes-MacBook-Air:proyecto_final_pre-camp_wbds_la-LorenzanaD dafne$ cd paso_7
+(base) Dafnes-MacBook-Air:paso_7 dafne$ ls
+instrucciones.txt	sequences.fasta		sequences_II.fasta
+(base) Dafnes-MacBook-Air:paso_7 dafne$ cat instrucciones.txt
+¡Ya falta poco! Vamos a jugar un poco más con los archivos comunes en bioinformática
+
+INSTRUCCIONES: Contá cuántas secuencias de 'Homo sapines' tiene en total todos los archivos .fasta de la carpeta y andá al directorio que se corresponda con ese número para saber cómo seguir
+
+
+(base) Dafnes-MacBook-Air:paso_7 dafne$ grep -wc "Homo sapiens" sequences.fasta sequences_II.fasta
+sequences.fasta:6
+sequences_II.fasta:3
+(base) Dafnes-MacBook-Air:paso_7 dafne$ cd ..
+(base) Dafnes-MacBook-Air:proyecto_final_pre-camp_wbds_la-LorenzanaD dafne$ cd paso_9
+(base) Dafnes-MacBook-Air:paso_9 dafne$ ls
+arch1.doc		arch_I.md		arch_III.md		arch_V.md		instrucciones.txt
+arch2.doc		arch_II.md		arch_IV.md		doc1.doc		posta_final.txt
+(base) Dafnes-MacBook-Air:paso_9 dafne$ cat instrucciones.txt 
+¡Buen trabajo! 
+
+INSTRUCCIONES: Para encontrar la frase secreta tendrás que extraer el texto de todxs los archivos '.md'. 
+Redireccioná lo que encontrás a un archivo de nombre `posta_final.txt`
+(base) Dafnes-MacBook-Air:paso_9 dafne$ git commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+	../paso_10/gpl-3.0.txt
+	posta_final.txt
+
+nothing added to commit but untracked files present
+(base) Dafnes-MacBook-Air:paso_9 dafne$ cat *.md > posta_final.txt
+(base) Dafnes-MacBook-Air:paso_9 dafne$ git commit
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+	../paso_10/gpl-3.0.txt
+	posta_final.txt
+
+nothing added to commit but untracked files present
+(base) Dafnes-MacBook-Air:paso_9 dafne$ git push
+Enter passphrase for key '/Users/Dafne/.ssh/id_ed25519': 
+Everything up-to-date
+(base) Dafnes-MacBook-Air:paso_9 dafne$ cat posta_final.txt
+“La libertad se aprende ejerciéndola”Clara Campoamor
+Gracias por sumarte
+a este desafío 🤗
